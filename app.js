@@ -11,8 +11,9 @@ const bridge = {
   handleMessage: function( sender, text ) {
     logger.info( `from ${sender}: ${text}` );
 
-    hass.services.call('test_imessage', 'script', {
-        message: text 
+    hass.services.call(config.get( 'script' ), 'script', {
+        message: text,
+        sender: sender 
     }) 
     .catch( err => {
       logger.error( err );
