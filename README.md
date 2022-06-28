@@ -20,3 +20,8 @@ This Node.js script will monitor the iMessage chat database and forward any mess
 
 # Allowed senders
 Depending on the contact, you will either get their email or number from iMessage. You can run this script with no allowed senders. It will then print to the console any message that doesn't match senders in the list. You will be able to grab the correct number/email from there.
+
+# Running at startup
+Edit the imessage-home-assistant.application.plist file and put the local directory of the project under the WorkingDirectory key
+
+Copy that file to /Library/LaunchDaemons. This will require root/sudo privileges.
