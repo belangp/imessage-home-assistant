@@ -1,8 +1,0 @@
----
-allowed_senders:
-  - "number or imessage email"
-
-home_assistant:
-  host:  "URL or IP address of Home Assistant"
-  port:  8123
-  token: "A long-lived access token from Home Assistant"
