@@ -6,10 +6,13 @@ const hass     = new HomeAssistant( config.get( 'home_assistant' ) );
 const imessage = require( 'osa-imessage' );
 const logger   = Pino();
 
+const logging  = config.get('logging');
+
 // TODO package this better
 const bridge = {
   handleMessage: function( sender, text ) {
-    logger.info( `from ${sender}: ${text}` );
+    if (logging)
+       logger.info( `from ${sender}: ${text}` );
 
     hass.services.call(config.get( 'script' ), 'script', {
         message: text,
